@@ -1,3 +1,121 @@
+// import React from "react";
+
+// export default function HeroSection() {
+//   return (
+//     <div
+//       style={{
+//         width: "100%",
+//         minHeight: "110vh",
+//         position: "relative",
+//         overflow: "hidden",
+//         padding: "0 20px",
+//         boxSizing: "border-box",
+//       }}
+//     >
+//       {/* 🔵 Top Blue Glow */}
+//       <div
+//         style={{
+//           position: "absolute",
+//           inset: 0,
+//           backgroundImage: `radial-gradient(circle at 50% 0%, rgba(70,130,180,0.55), transparent 70%)`,
+//           filter: "blur(120px)",
+//           zIndex: 0,
+//           pointerEvents: "none",
+//         }}
+//       />
+
+//       {/* ⚪ Bottom Radial Background */}
+//       <div
+//         style={{
+//           position: "absolute",
+//           inset: 0,
+//           background: "radial-gradient(125% 125% at 50% 90%, #fff 40%, #475569 100%)",
+//           zIndex: -1,
+//           pointerEvents: "none",
+//         }}
+//       />
+
+//       {/* Hero Content */}
+//       <div
+//         style={{
+//           marginTop: "120px",
+//           position: "relative",
+//           zIndex: 10,
+//           width: "80%",
+//           maxWidth: "1320px",
+//           margin: "0 auto",
+//           display: "flex",
+//           flexDirection: "column",
+//           alignItems: "center", // horizontally center content
+//           textAlign: "center",  // center text inside
+//         }}
+//       >
+//         <h1
+//           style={{
+//             fontSize: "65px",
+//             fontWeight: "800",
+//             lineHeight: "1.2",
+//             color: "#111",
+//           }}
+//         >
+//           Build Future-Ready <span style={{ color: "#4da3ff" }}>Software Solutions</span>
+//         </h1>
+
+//         <p
+//           style={{
+//             marginTop: "10px",
+//             fontSize: "22px",
+//             color: "#555",
+//             maxWidth: "800px",
+//             lineHeight: "1.6",
+//           }}
+//         >
+//           We develop powerful, scalable and modern applications designed to transform your business digitally.
+//         </p>
+
+//         <div
+//           style={{
+//             marginTop: "10px",
+//             display: "flex",
+//             justifyContent: "center",
+//             gap: "20px",
+//             flexWrap: "wrap",
+//           }}
+//         >
+//           <button
+//             style={{
+//               padding: "14px 35px",
+//               background: "#1e90ff",
+//               border: "none",
+//               color: "white",
+//               borderRadius: "10px",
+//               fontSize: "18px",
+//               fontWeight: "600",
+//               cursor: "pointer",
+//             }}
+//           >
+//             Get Started
+//           </button>
+
+//           <button
+//             style={{
+//               padding: "14px 35px",
+//               border: "2px solid #444",
+//               background: "transparent",
+//               color: "#222",
+//               borderRadius: "10px",
+//               fontSize: "18px",
+//               fontWeight: "600",
+//               cursor: "pointer",
+//             }}
+//           >
+//             Learn More
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 import React from "react";
 
 export default function HeroSection() {
@@ -5,11 +123,16 @@ export default function HeroSection() {
     <div
       style={{
         width: "100%",
-        minHeight: "110vh",
+        height: "110vh", // full viewport height
         position: "relative",
         overflow: "hidden",
         padding: "0 20px",
         boxSizing: "border-box",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center", // vertical center
+        alignItems: "center",     // horizontal center
+        textAlign: "center",      // center text inside
       }}
     >
       {/* 🔵 Top Blue Glow */}
@@ -38,16 +161,13 @@ export default function HeroSection() {
       {/* Hero Content */}
       <div
         style={{
-          marginTop: "120px",
           position: "relative",
           zIndex: 10,
-          width: "80%",
           maxWidth: "1320px",
-          margin: "0 auto",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center", // horizontally center content
-          textAlign: "center",  // center text inside
+          alignItems: "center",
+          gap: "20px",
         }}
       >
         <h1
@@ -63,7 +183,6 @@ export default function HeroSection() {
 
         <p
           style={{
-            marginTop: "10px",
             fontSize: "22px",
             color: "#555",
             maxWidth: "800px",
@@ -75,7 +194,6 @@ export default function HeroSection() {
 
         <div
           style={{
-            marginTop: "10px",
             display: "flex",
             justifyContent: "center",
             gap: "20px",
