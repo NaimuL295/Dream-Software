@@ -28,7 +28,8 @@ export default function Navbar() {
     top: 0,
     backgroundColor: "#FFFFFF00",
     zIndex: 100,
-    boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+    // boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+   
   };
 
   const linkStyle = {
