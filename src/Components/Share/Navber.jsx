@@ -10,10 +10,10 @@ export default function Navbar() {
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
-    { name: "Our Work", path: "/our-work" },
-    { name: "Why Us?", path: "/why-us" },
+    { name: "Our Work", path: "/outwork" },
+    { name: "Why Us?", path: "/whyUs" },
     { name: "Blog", path: "/blog" },
-    { name: "Company & Culture", path: "/company-culture" },
+    { name: "Company & Culture", path: "/companyCulture" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -36,7 +36,7 @@ export default function Navbar() {
     textDecoration: "none",
     color: "#333",
     fontWeight: 500,
-    fontSize: "16px",
+    fontSize: "18px",
     cursor: "pointer",
     whiteSpace: "nowrap",
   };
@@ -80,7 +80,8 @@ export default function Navbar() {
 
       {/* Logo */}
       <div style={{ fontWeight: "700", fontSize: "24px" }}>
-        Dream Software Technology
+        {/* Dream Software Technology */}
+        DST
       </div>
 
       {/* Desktop Menu */}
@@ -100,7 +101,7 @@ export default function Navbar() {
             to={item.path}
             style={({ isActive }) => ({
               ...linkStyle,
-              color: isActive ? "#1e90ff" : "#333",
+              color: isActive ? "#3272fcff" : "#333",
             })}
           >
             {item.name}
@@ -146,3 +147,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

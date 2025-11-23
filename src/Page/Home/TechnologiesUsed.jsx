@@ -4,7 +4,12 @@ import { motion } from "framer-motion";
 export default function TechnologiesUsed() {
   const techs = [
     ".NET",
-    "MySQL"
+    "MySQL",
+    "C/C++",
+    "Python",
+    "C#",
+    "XHTML",
+    "VB"
   ];
 
   return (
