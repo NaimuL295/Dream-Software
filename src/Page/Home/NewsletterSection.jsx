@@ -49,7 +49,7 @@ export default function NewsletterSection() {
             padding: "12px 25px",
             borderRadius: "8px",
             border: "none",
-            backgroundColor: "",
+            backgroundColor: "#4e5149e0",
             color: "#fff",
             fontWeight: "bold",
             cursor: "pointer",

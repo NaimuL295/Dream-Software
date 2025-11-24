@@ -73,12 +73,6 @@ export default function Footer() {
             +880+ 01896036830<br />
           dreamssofttech.bd@gmail.com
           </p>
-          <div style={{ display: "flex", gap: "15px", marginTop: "15px" }}>
-            <motion.a whileHover={{ scale: 1.2 }} href="#" style={socialStyle}>🌐</motion.a>
-            <motion.a whileHover={{ scale: 1.2 }} href="#" style={socialStyle}>💼</motion.a>
-            <motion.a whileHover={{ scale: 1.2 }} href="#" style={socialStyle}>🐦</motion.a>
-            <motion.a whileHover={{ scale: 1.2 }} href="#" style={socialStyle}>📸</motion.a>
-          </div>
         </div>
       </div>
 
