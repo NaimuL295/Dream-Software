@@ -54,14 +54,14 @@ export default function Footer() {
 
         {/* Resources */}
         <div>
-          {/* <h3 style={footerTitle}>Resources</h3> */}
-          {/* <ul style={footerList}>
+          <h3 style={footerTitle}>Resources</h3> 
+           <ul style={footerList}>
             <li><Link to="/about" style={linkStyle}>About Us</Link></li>
             <li><Link to="/portfolio" style={linkStyle}>Our Portfolio</Link></li>
             <li><Link to="/pricing" style={linkStyle}>Pricing Plans</Link></li>
             <li><Link to="/blog" style={linkStyle}>Blog & Updates</Link></li>
             <li><Link to="/career" style={linkStyle}>Career Opportunities</Link></li>
-          </ul> */}
+          </ul>
         </div>
 
         {/* Contact Info */}
@@ -73,12 +73,12 @@ export default function Footer() {
             +880+ 01896036830<br />
           dreamssofttech.bd@gmail.com
           </p>
-          {/* <div style={{ display: "flex", gap: "15px", marginTop: "15px" }}>
+          <div style={{ display: "flex", gap: "15px", marginTop: "15px" }}>
             <motion.a whileHover={{ scale: 1.2 }} href="#" style={socialStyle}>🌐</motion.a>
             <motion.a whileHover={{ scale: 1.2 }} href="#" style={socialStyle}>💼</motion.a>
             <motion.a whileHover={{ scale: 1.2 }} href="#" style={socialStyle}>🐦</motion.a>
             <motion.a whileHover={{ scale: 1.2 }} href="#" style={socialStyle}>📸</motion.a>
-          </div> */}
+          </div>
         </div>
       </div>
 
