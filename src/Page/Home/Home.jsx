@@ -16,10 +16,12 @@ import PricingSection from './PricingSection'
 import BlogSection from './BlogSection'
 import FAQSection from './FAQSection'
 import NewsletterSection from './NewsletterSection'
+import Navbar from '../../Components/Share/Navber'
 
 export default function Home() {
   return (
     <div>
+         {/* <Navbar/> */}
         <HeroSection />
 
      <AboutSection />

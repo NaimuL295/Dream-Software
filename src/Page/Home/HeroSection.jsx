@@ -1,30 +1,56 @@
 import React from "react";
+import video from "../../assets/video.mp4";
+import Navbar from "../../Components/Share/Navber";
 
 export default function HeroSection() {
   return (
     <div
       style={{
         width: "100%",
-        height: "110vh", // full viewport height
+        height: "110vh",
         position: "relative",
         overflow: "hidden",
-        padding: "0 20px",
-        boxSizing: "border-box",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center", // vertical center
-        alignItems: "center",     // horizontal center
-        textAlign: "center",      // center text inside
       }}
     >
-      {/* 🔵 Top Blue Glow */}
+      {/* ⭐ Navbar always on top of video */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          zIndex: 10, // highest
+        }}
+      >
+        <Navbar />
+      </div>
+
+      {/* 🎥 Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 0,
+        }}
+      >
+        <source src={video} type="video/mp4" />
+      </video>
+
+      {/* 🔵 Top Glow */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           backgroundImage: `radial-gradient(circle at 50% 0%, rgba(70,130,180,0.55), transparent 70%)`,
           filter: "blur(120px)",
-          zIndex: 0,
+          zIndex: 1,
           pointerEvents: "none",
         }}
       />
@@ -34,22 +60,25 @@ export default function HeroSection() {
         style={{
           position: "absolute",
           inset: 0,
-          background: "radial-gradient(125% 125% at 50% 90%, #fff 40%, #475569 100%)",
+          background:
+            "radial-gradient(125% 125% at 50% 90%, #fff 40%, #475569 100%)",
           zIndex: -1,
           pointerEvents: "none",
         }}
       />
 
-      {/* Hero Content */}
+      {/* ⭐ Hero Content */}
       <div
         style={{
           position: "relative",
-          zIndex: 10,
-          maxWidth: "1320px",
+          zIndex: 2,
+          height: "100%",
           display: "flex",
           flexDirection: "column",
+          justifyContent: "center",
           alignItems: "center",
-          gap: "20px",
+          textAlign: "center",
+          paddingTop: "80px", // navbar space
         }}
       >
         <h1
@@ -57,27 +86,31 @@ export default function HeroSection() {
             fontSize: "65px",
             fontWeight: "800",
             lineHeight: "1.2",
-            color: "#111",
+            color: "#fff",
+            textShadow: "2px 2px 8px rgba(0,0,0,0.5)",
           }}
         >
-          Build Future-Ready <span style={{ color: "#4da3ff" }}>Software Solutions</span>
+          Build Future-Ready{" "}
+          <span style={{ color: "#4da3ff" }}>Software Solutions</span>
         </h1>
 
         <p
           style={{
             fontSize: "22px",
-            color: "#555",
+            color: "#eee",
             maxWidth: "800px",
             lineHeight: "1.6",
+            marginTop: "15px",
           }}
         >
-          We develop powerful, scalable and modern applications designed to transform your business digitally.
+          We develop powerful, scalable and modern applications designed to
+          transform your business digitally.
         </p>
 
         <div
           style={{
+            marginTop: "30px",
             display: "flex",
-            justifyContent: "center",
             gap: "20px",
             flexWrap: "wrap",
           }}
@@ -100,9 +133,9 @@ export default function HeroSection() {
           <button
             style={{
               padding: "14px 35px",
-              border: "2px solid #444",
+              border: "2px solid #fff",
               background: "transparent",
-              color: "#222",
+              color: "#fff",
               borderRadius: "10px",
               fontSize: "18px",
               fontWeight: "600",
