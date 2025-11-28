@@ -100,12 +100,12 @@ export default function Contact() {
 
   const textareaStyle = {
     ...inputStyle,
-    resize: "vertical",
+   
     minHeight: "120px",
   };
 
   const buttonStyle = {
-    gridColumn: "1 / -1",
+    gridColumn: "",
     backgroundColor: "#2563eb",
     color: "#ffffff",
     padding: "12px",

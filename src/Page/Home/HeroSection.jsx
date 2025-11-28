@@ -1,8 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import video from "../../assets/video.mp4";
 import Navbar from "../../Components/Share/Navber";
 
 export default function HeroSection() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 480);
+      setIsTablet(window.innerWidth > 480 && window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // 🎨 Responsive Styles
+  const titleStyle = {
+    fontSize: isMobile ? "28px" : isTablet ? "40px" : "65px",
+    fontWeight: "800",
+    lineHeight: "1.2",
+    color: "#fff",
+    textShadow: "2px 2px 8px rgba(0,0,0,0.5)",
+  };
+
+  const paragraphStyle = {
+    fontSize: isMobile ? "16px" : isTablet ? "18px" : "22px",
+    color: "#eee",
+    maxWidth: "800px",
+    lineHeight: "1.6",
+    marginTop: "15px",
+  };
+
+  const buttonStylePrimary = {
+    padding: isMobile ? "12px 25px" : "14px 35px",
+    background: "#1e90ff",
+    border: "none",
+    color: "white",
+    borderRadius: "10px",
+    fontSize: isMobile ? "16px" : "18px",
+    fontWeight: "600",
+    cursor: "pointer",
+  };
+
+  const buttonStyleOutline = {
+    padding: isMobile ? "12px 25px" : "14px 35px",
+    border: "2px solid #fff",
+    background: "transparent",
+    color: "#fff",
+    borderRadius: "10px",
+    fontSize: isMobile ? "16px" : "18px",
+    fontWeight: "600",
+    cursor: "pointer",
+  };
+
   return (
     <div
       style={{
@@ -12,20 +65,20 @@ export default function HeroSection() {
         overflow: "hidden",
       }}
     >
-      {/* ⭐ Navbar always on top of video */}
+      {/* Navbar */}
       <div
         style={{
           position: "absolute",
           top: 0,
           left: 0,
           width: "100%",
-          zIndex: 10, // highest
+          zIndex: 20,
         }}
       >
         <Navbar />
       </div>
 
-      {/* 🎥 Video Background */}
+      {/* Video Background */}
       <video
         autoPlay
         loop
@@ -43,19 +96,20 @@ export default function HeroSection() {
         <source src={video} type="video/mp4" />
       </video>
 
-      {/* 🔵 Top Glow */}
+      {/* Glow */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: `radial-gradient(circle at 50% 0%, rgba(70,130,180,0.55), transparent 70%)`,
+          backgroundImage:
+            "radial-gradient(circle at 50% 0%, rgba(70,130,180,0.55), transparent 70%)",
           filter: "blur(120px)",
           zIndex: 1,
           pointerEvents: "none",
         }}
       />
 
-      {/* ⚪ Bottom Radial Background */}
+      {/* Background */}
       <div
         style={{
           position: "absolute",
@@ -67,7 +121,7 @@ export default function HeroSection() {
         }}
       />
 
-      {/* ⭐ Hero Content */}
+      {/* Content */}
       <div
         style={{
           position: "relative",
@@ -78,31 +132,17 @@ export default function HeroSection() {
           justifyContent: "center",
           alignItems: "center",
           textAlign: "center",
-          paddingTop: "80px", // navbar space
+          paddingTop: "80px",
+          paddingLeft: "10px",
+          paddingRight: "10px",
         }}
       >
-        <h1
-          style={{
-            fontSize: "65px",
-            fontWeight: "800",
-            lineHeight: "1.2",
-            color: "#fff",
-            textShadow: "2px 2px 8px rgba(0,0,0,0.5)",
-          }}
-        >
+        <h1 style={titleStyle}>
           Build Future-Ready{" "}
           <span style={{ color: "#4da3ff" }}>Software Solutions</span>
         </h1>
 
-        <p
-          style={{
-            fontSize: "22px",
-            color: "#eee",
-            maxWidth: "800px",
-            lineHeight: "1.6",
-            marginTop: "15px",
-          }}
-        >
+        <p style={paragraphStyle}>
           We develop powerful, scalable and modern applications designed to
           transform your business digitally.
         </p>
@@ -113,37 +153,11 @@ export default function HeroSection() {
             display: "flex",
             gap: "20px",
             flexWrap: "wrap",
+            justifyContent: "center",
           }}
         >
-          <button
-            style={{
-              padding: "14px 35px",
-              background: "#1e90ff",
-              border: "none",
-              color: "white",
-              borderRadius: "10px",
-              fontSize: "18px",
-              fontWeight: "600",
-              cursor: "pointer",
-            }}
-          >
-            Get Started
-          </button>
-
-          <button
-            style={{
-              padding: "14px 35px",
-              border: "2px solid #fff",
-              background: "transparent",
-              color: "#fff",
-              borderRadius: "10px",
-              fontSize: "18px",
-              fontWeight: "600",
-              cursor: "pointer",
-            }}
-          >
-            Learn More
-          </button>
+          <button style={buttonStylePrimary}>Get Started</button>
+          <button style={buttonStyleOutline}>Learn More</button>
         </div>
       </div>
     </div>
