@@ -11,9 +11,9 @@ export default function LayoutRoot() {
   return (
     <div>
       {!isHome && <Navbar />  }  
-   {/* <div style={{ height:"calc(100vh - 600px)" }}> */}
+     <div style={ isHome ? {} : { minHeight: "calc(100vh - 50px)" } }>
   <Outlet />
-{/* </div> */}
+</div>
       <Footer/>
     </div>
   )

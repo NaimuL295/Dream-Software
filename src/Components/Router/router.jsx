@@ -9,6 +9,7 @@ import OurWork from "../../Page/OurWork";
 import Services from "../../Page/Services";
 import WhyUs from "../../Page/WhyUs";
 import TestimonialForm from "../../Page/TestimonialForm";
+import ErrorPage from "../Share/ErrorPage";
 
  export const router = createBrowserRouter([
   { path: "/", 
@@ -39,6 +40,10 @@ import TestimonialForm from "../../Page/TestimonialForm";
     {
       path:"testimonialForm",
       Component:TestimonialForm
+    },
+    {
+      path:"*",
+      element:<ErrorPage/>
     }
    
     ] },
